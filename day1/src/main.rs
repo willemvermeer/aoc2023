@@ -55,14 +55,14 @@ zoneight234
     }
     println!("{}", total2);
 }
-pub fn calibrate(s: String) -> u32 {
+pub fn calibrate(s: String) -> u64 {
     let l = s.chars().find(|c| c.is_digit(10));
     let r = s.chars().rev().find(|c| c.is_digit(10));
 
     let answer = l.unwrap().to_digit(10).unwrap() * 10 + r.unwrap().to_digit(10).unwrap();
     answer
 }
-pub fn calibrate2(target: String) -> u32 {
+pub fn calibrate2(target: String) -> u64 {
     let nums = vec![
         String::from("one"),
         String::from("two"),
@@ -134,7 +134,7 @@ pub fn calibrate2(target: String) -> u32 {
 
     to_value(&min_s) * 10 + to_value(&min_s2)
 }
-pub fn to_value(s: &String) -> u32 {
+pub fn to_value(s: &String) -> u64 {
     let values = HashMap::from([
         (String::from("one"), 1),
         (String::from("two"), 2),
